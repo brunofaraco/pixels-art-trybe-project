@@ -1,8 +1,27 @@
+/* .center {
+    margin: auto;
+
+} */
+
 .color {
     border: 1px solid black;
     width: 100px;
     height: 100px;
     display: inline-block;
+}
+
+.color-palette {}
+
+.pixel {
+    border: 1px solid black;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+}
+
+#title {
+    text-align: center;
 }
 
 #black {
@@ -19,4 +38,10 @@
 
 #yellow {
     background-color: yellow;
+}
+
+#pixel-board {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
 }

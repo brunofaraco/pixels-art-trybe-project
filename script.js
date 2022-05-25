@@ -8,4 +8,16 @@ function fillPixelBoard(number) {
     }
 }
 
+// let classes = document.querySelectorAll('div')[0].classList;
+// console.log(classes);
+
+// function changeColor(array) {
+//     if (array.contains('selected')) {
+//         array.remove('selected');
+//     };
+// }
+
 fillPixelBoard(25);
+// changeColor(classes);
+
+// console.log(classes);

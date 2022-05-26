@@ -10,16 +10,15 @@ function fillPixelBoard(number) {
 
 fillPixelBoard(25);
 
-// let classes = document.querySelectorAll('div')[0].classList;
-// console.log(classes);
+// let selected = document.querySelector('.selected');
+const colorPaletteChildren = document.getElementById('color-palette').children;
 
-// // dtl = DomTokenList
-// function removeSelectedFromColor(dtl) {
-//     if (dtl.contains('selected')) {
-//         dtl.remove('selected');
-//     };
-// }
+function reassignClassSelected(event) {
+    let selected = document.querySelector('.selected');
+    selected.classList.remove('selected');
+    event.target.classList.add('selected');
+}
 
-// removeSelectedFromColor(classes);
-
-// console.log(classes);
+for (let index = 0; index < colorPaletteChildren.length; index += 1) {
+   colorPaletteChildren[index].addEventListener('click', reassignClassSelected)
+}

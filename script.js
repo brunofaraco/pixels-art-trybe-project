@@ -8,16 +8,18 @@ function fillPixelBoard(number) {
     }
 }
 
+fillPixelBoard(25);
+
 // let classes = document.querySelectorAll('div')[0].classList;
 // console.log(classes);
 
-// function changeColor(array) {
-//     if (array.contains('selected')) {
-//         array.remove('selected');
+// // dtl = DomTokenList
+// function removeSelectedFromColor(dtl) {
+//     if (dtl.contains('selected')) {
+//         dtl.remove('selected');
 //     };
 // }
 
-fillPixelBoard(25);
-// changeColor(classes);
+// removeSelectedFromColor(classes);
 
 // console.log(classes);

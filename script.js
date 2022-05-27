@@ -1,4 +1,4 @@
-const body = document.body
+// Requisito 4
 
 function fillPixelBoard(number) {
     for (let index = 0; index < number; index += 1) {
@@ -10,8 +10,13 @@ function fillPixelBoard(number) {
 
 fillPixelBoard(25);
 
-// let selected = document.querySelector('.selected');
+// Requisito 7
+
 const colorPaletteChildren = document.getElementById('color-palette').children;
+
+for (let index = 0; index < colorPaletteChildren.length; index += 1) {
+    colorPaletteChildren[index].addEventListener('click', reassignClassSelected);
+}
 
 function reassignClassSelected(event) {
     let selected = document.querySelector('.selected');
@@ -19,6 +24,15 @@ function reassignClassSelected(event) {
     event.target.classList.add('selected');
 }
 
-for (let index = 0; index < colorPaletteChildren.length; index += 1) {
-   colorPaletteChildren[index].addEventListener('click', reassignClassSelected)
+// Requisito 8
+
+const pixelBoardSectionChildren = document.getElementById('pixel-board').children
+// let bgBlack = document.querySelectorAll('.painted')[0].style.backgroundColor = 'black';
+
+for (let index = 0; index < pixelBoardSectionChildren.length; index += 1) {
+    pixelBoardSectionChildren[index].addEventListener('click', paintPixel);
+}
+
+function paintPixel(event) {
+    event.target.classList.add('blue');
 }

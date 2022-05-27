@@ -27,7 +27,6 @@ function reassignClassSelected(event) {
 // Requisito 8
 
 const pixelBoardSectionChildren = document.getElementById('pixel-board').children
-// let bgBlack = document.querySelectorAll('.painted')[0].style.backgroundColor = 'black';
 
 for (let index = 0; index < pixelBoardSectionChildren.length; index += 1) {
     pixelBoardSectionChildren[index].addEventListener('click', paintPixel);

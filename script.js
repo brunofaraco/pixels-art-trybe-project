@@ -48,3 +48,8 @@ button.onclick = function() {
         actualPixel.style.backgroundColor = 'white';
     }
 }
+
+// Requisito 10
+
+const boardSize = document.getElementById('board-size');
+const vqvButton = document.getElementById('generate-board');

@@ -19,19 +19,23 @@ for (let index = 0; index < colorPaletteChildren.length; index += 1) {
 }
 
 function reassignClassSelected(event) {
-    let selected = document.querySelector('.selected');
+    const selected = document.querySelector('.selected');
     selected.classList.remove('selected');
     event.target.classList.add('selected');
 }
 
 // Requisito 8
 
-const pixelBoardSectionChildren = document.getElementById('pixel-board').children
+const pixelBoardSection = document.getElementById('pixel-board');
+// console.log(pixelBoardSection.children[2]);
+// const colorSelected = 'blue'
+// pixelBoardSection.children[2].style.backgroundColor = colorSelected;
 
-for (let index = 0; index < pixelBoardSectionChildren.length; index += 1) {
-    pixelBoardSectionChildren[index].addEventListener('click', paintPixel);
+for (let index = 0; index < pixelBoardSection.children.length; index += 1) {
+    pixelBoardSection.children[index].addEventListener('click', paintPixel);
 }
 
 function paintPixel(event) {
-    event.target.classList.add('blue');
+    const colorSelected = document.querySelector('.selected').id;
+    event.target.style.backgroundColor = colorSelected;
 }

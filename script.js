@@ -27,9 +27,6 @@ function reassignClassSelected(event) {
 // Requisito 8
 
 const pixelBoardSection = document.getElementById('pixel-board');
-// console.log(pixelBoardSection.children[2]);
-// const colorSelected = 'blue'
-// pixelBoardSection.children[2].style.backgroundColor = colorSelected;
 
 for (let index = 0; index < pixelBoardSection.children.length; index += 1) {
     pixelBoardSection.children[index].addEventListener('click', paintPixel);
@@ -38,4 +35,16 @@ for (let index = 0; index < pixelBoardSection.children.length; index += 1) {
 function paintPixel(event) {
     const colorSelected = document.querySelector('.selected').id;
     event.target.style.backgroundColor = colorSelected;
+}
+
+// Requisito 9
+
+const button = document.getElementById('clear-board');
+const nodeListPixel = document.querySelectorAll('.pixel');
+
+button.onclick = function() {
+    for (let index = 0; index < nodeListPixel.length; index += 1) {
+        const actualPixel = nodeListPixel[index];
+        actualPixel.style.backgroundColor = 'white';
+    }
 }

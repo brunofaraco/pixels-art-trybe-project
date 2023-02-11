@@ -1,41 +1,41 @@
 .color {
-    border: 1px solid black;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
 }
 
 .pixel {
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    background-color: rgb(255, 255, 255);
-    margin: 1px 0 0 3px;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: white;
+  margin: 1px 0 0 3px;
 }
 
 #title {
-    text-align: center;
+  text-align: center;
 }
 
 #black {
-    background-color: black;
+  background-color: black;
 }
 
 #red {
-    background-color: red;
+  background-color: red;
 }
 
 #blue {
-    background-color: blue;
+  background-color: blue;
 }
 
 #yellow {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 #pixel-board {
-    width: 230px;
-    height: 230px;
-    border: 1px solid black;
+  width: 230px;
+  height: 230px;
+  border: 1px solid black;
 }

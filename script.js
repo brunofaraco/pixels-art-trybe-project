@@ -1,14 +1,23 @@
 // Requisito 4
 
-function fillPixelBoard(number) {
-  for (let index = 0; index < number; index += 1) {
+const PIXEL_BOARD = document.getElementById('pixel-board');
+
+function fillPixelBoard(boardSide) {
+  PIXEL_BOARD.style.width = `${42 * boardSide}px`;
+  PIXEL_BOARD.style.height = `${42 * boardSide}px`;
+
+  const boardSize = boardSide ** 2;
+
+  for (let index = 0; index < boardSize; index += 1) {
     const pixelBlank = document.createElement('div');
+
     pixelBlank.setAttribute('class', 'pixel');
-    document.getElementById('pixel-board').appendChild(pixelBlank);
+
+    PIXEL_BOARD.appendChild(pixelBlank);
   }
 }
 
-fillPixelBoard(25);
+fillPixelBoard(5);
 
 // Requisito 7
 
@@ -26,7 +35,7 @@ for (let index = 0; index < COLOR_PALETTE_CHILDREN.length; index += 1) {
 
 // Requisito 8
 
-const PIXEL_BOARD_DIV = document.getElementById('pixel-board');
+const PIXEL_BOARD_DIV = PIXEL_BOARD;
 
 function paintPixel(event) {
   const { target } = event;
@@ -49,3 +58,6 @@ button.onclick = () => {
     actualPixel.style.backgroundColor = 'white';
   }
 };
+
+// Requisito 10
+

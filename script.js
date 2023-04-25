@@ -39,7 +39,7 @@ const PIXEL_BOARD_DIV = PIXEL_BOARD;
 
 function paintPixel(event) {
   const { target } = event;
-  const colorSelected = document.querySelector('.selected').id;
+  const colorSelected = document.querySelector('.selected').style.backgroundColor;
   target.style.backgroundColor = colorSelected;
 }
 

@@ -12,7 +12,7 @@ fillPixelBoard(25);
 
 // Requisito 7
 
-const colorPaletteChildren = document.getElementById('color-palette').children;
+const COLOR_PALETTE_CHILDREN = document.getElementById('color-palette').children;
 
 function reassignClassSelected(event) {
   const selected = document.querySelector('.selected');
@@ -20,13 +20,13 @@ function reassignClassSelected(event) {
   event.target.classList.add('selected');
 }
 
-for (let index = 0; index < colorPaletteChildren.length; index += 1) {
-  colorPaletteChildren[index].addEventListener('click', reassignClassSelected);
+for (let index = 0; index < COLOR_PALETTE_CHILDREN.length; index += 1) {
+  COLOR_PALETTE_CHILDREN[index].addEventListener('click', reassignClassSelected);
 }
 
 // Requisito 8
 
-const pixelBoardSection = document.getElementById('pixel-board');
+const PIXEL_BOARD_DIV = document.getElementById('pixel-board');
 
 function paintPixel(event) {
   const { target } = event;
@@ -34,8 +34,8 @@ function paintPixel(event) {
   target.style.backgroundColor = colorSelected;
 }
 
-for (let index = 0; index < pixelBoardSection.children.length; index += 1) {
-  pixelBoardSection.children[index].addEventListener('click', paintPixel);
+for (let index = 0; index < PIXEL_BOARD_DIV.children.length; index += 1) {
+  PIXEL_BOARD_DIV.children[index].addEventListener('click', paintPixel);
 }
 
 // Requisito 9

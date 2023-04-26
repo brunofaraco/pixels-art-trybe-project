@@ -59,19 +59,21 @@ function randomizePalette() {
   COLOR_PALETTE_CHILDREN[3].style.backgroundColor = generateRandomColor();
 }
 
-for (let index = 0; index < COLOR_PALETTE_CHILDREN.length; index += 1) {
-  COLOR_PALETTE_CHILDREN[index].addEventListener('click', reassignClassSelected);
+function addListeners() {
+  for (let index = 0; index < COLOR_PALETTE_CHILDREN.length; index += 1) {
+    COLOR_PALETTE_CHILDREN[index].addEventListener('click', reassignClassSelected);
+  }
 }
 
-CLEAR_BOARD_BTN.onclick = () => {
+function handleClearBoardBtn() {
   const pixelBoardArr = [...PIXELS_DIVS];
 
   pixelBoardArr.forEach((_, index) => {
     pixelBoardArr[index].style.backgroundColor = 'white';
   });
-};
+}
 
-VQV_BTN.addEventListener('click', (event) => {
+function generateNewBoard(event) {
   event.preventDefault();
 
   const { value } = BOARD_SIZE_INPUT;
@@ -81,7 +83,13 @@ VQV_BTN.addEventListener('click', (event) => {
   if (value >= 50) return createNewPixelBoard(50);
 
   return createNewPixelBoard(value);
-});
+}
 
+// Assign function to buttons onClick
+CLEAR_BOARD_BTN.onclick = handleClearBoardBtn;
+VQV_BTN.onclick = generateNewBoard;
+
+// Call initial functions
 fillPixelBoard(5);
 randomizePalette();
+addListeners();

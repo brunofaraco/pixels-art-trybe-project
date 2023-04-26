@@ -13,7 +13,7 @@ function chunk(arr, len) {
   return chunks;
 }
 
-describe.skip('1 - Adicione à página o título "Paleta de Cores".', () => {
+describe('1 - Adicione à página o título "Paleta de Cores".', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -23,7 +23,7 @@ describe.skip('1 - Adicione à página o título "Paleta de Cores".', () => {
   });
 });
 
-describe.skip('2 - Adicione à página uma paleta de quatro cores distintas.', () => {
+describe('2 - Adicione à página uma paleta de quatro cores distintas.', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -96,7 +96,7 @@ describe.skip('2 - Adicione à página uma paleta de quatro cores distintas.', (
   });
 });
 
-describe.skip('3 - Adicione a cor **preta** como a primeira cor da paleta de cores.', () => {
+describe('3 - Adicione a cor **preta** como a primeira cor da paleta de cores.', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -149,7 +149,7 @@ describe.skip('3 - Adicione a cor **preta** como a primeira cor da paleta de cor
   });
 });
 
-describe.skip('4 - Adicione à página um quadro de pixels, com 25 pixels.', () => {
+describe('4 - Adicione à página um quadro de pixels, com 25 pixels.', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -177,7 +177,7 @@ describe.skip('4 - Adicione à página um quadro de pixels, com 25 pixels.', () 
   });
 });
 
-describe.skip('5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura e seja delimitado por uma borda preta de 1 pixel.', () => {
+describe('5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura e seja delimitado por uma borda preta de 1 pixel.', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -217,7 +217,7 @@ describe.skip('5 - Faça com que cada elemento do quadro de pixels possua 40 pix
   });
 });
 
-describe.skip('6 - Defina a cor preta como cor inicial. Ao carregar a página a cor preta já deve estar selecionada para pintar os pixels', () => {
+describe('6 - Defina a cor preta como cor inicial. Ao carregar a página a cor preta já deve estar selecionada para pintar os pixels', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -234,7 +234,7 @@ describe.skip('6 - Defina a cor preta como cor inicial. Ao carregar a página a 
   });
 });
 
-describe.skip('7 - Clicar em uma das cores da paleta, faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.', () => {
+describe('7 - Clicar em uma das cores da paleta, faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -265,7 +265,7 @@ describe.skip('7 - Clicar em uma das cores da paleta, faz com que ela seja selec
   });
 });
 
-describe.skip('8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta, faz com que o pixel seja preenchido com a cor selecionada.', () => {
+describe('8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta, faz com que o pixel seja preenchido com a cor selecionada.', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });
@@ -328,7 +328,7 @@ describe.skip('8 - Clicar em um pixel dentro do quadro após selecionar uma cor 
   });
 });
 
-describe.skip('9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.', () => {
+describe('9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.', () => {
   beforeEach(() => {
     cy.visit('./index.html');
   });

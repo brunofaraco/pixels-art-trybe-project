@@ -1,6 +1,17 @@
-// Requisito 4
-
+// Get consts that will be used
 const PIXEL_BOARD = document.getElementById('pixel-board');
+const CLEAR_BOARD_BTN = document.getElementById('clear-board');
+const COLOR_PALETTE_CHILDREN = document.getElementById('color-palette').children;
+const VQV_BTN = document.getElementById('generate-board');
+const BOARD_SIZE_INPUT = document.getElementById('board-size');
+const PIXELS_DIVS = document.getElementsByClassName('pixel');
+
+// Creation of the functions that will be used
+function paintPixel(event) {
+  const { target } = event;
+  const colorSelected = document.querySelector('.selected').style.backgroundColor;
+  target.style.backgroundColor = colorSelected;
+}
 
 function fillPixelBoard(boardSide) {
   PIXEL_BOARD.style.width = `${42 * boardSide}px`;
@@ -12,16 +23,11 @@ function fillPixelBoard(boardSide) {
     const pixelBlank = document.createElement('div');
 
     pixelBlank.setAttribute('class', 'pixel');
+    pixelBlank.addEventListener('click', paintPixel);
 
     PIXEL_BOARD.appendChild(pixelBlank);
   }
 }
-
-fillPixelBoard(5);
-
-// Requisito 7
-
-const COLOR_PALETTE_CHILDREN = document.getElementById('color-palette').children;
 
 function reassignClassSelected(event) {
   const selected = document.querySelector('.selected');
@@ -29,35 +35,53 @@ function reassignClassSelected(event) {
   event.target.classList.add('selected');
 }
 
+function createNewPixelBoard(newSideValue) {
+  while (PIXEL_BOARD.firstChild) {
+    PIXEL_BOARD.removeChild(PIXEL_BOARD.firstChild);
+  }
+
+  fillPixelBoard(newSideValue);
+}
+
+function generateRandomColor() {
+  const r = Math.floor(Math.random() * 256); // componente vermelho
+  const g = Math.floor(Math.random() * 256); // componente verde
+  const b = Math.floor(Math.random() * 256); // componente azul
+
+  const color = `rgb(${r}, ${g}, ${b})`;
+
+  return color;
+}
+
+function randomizePalette() {
+  COLOR_PALETTE_CHILDREN[1].style.backgroundColor = generateRandomColor();
+  COLOR_PALETTE_CHILDREN[2].style.backgroundColor = generateRandomColor();
+  COLOR_PALETTE_CHILDREN[3].style.backgroundColor = generateRandomColor();
+}
+
 for (let index = 0; index < COLOR_PALETTE_CHILDREN.length; index += 1) {
   COLOR_PALETTE_CHILDREN[index].addEventListener('click', reassignClassSelected);
 }
 
-// Requisito 8
+CLEAR_BOARD_BTN.onclick = () => {
+  const pixelBoardArr = [...PIXELS_DIVS];
 
-const PIXEL_BOARD_DIV = PIXEL_BOARD;
-
-function paintPixel(event) {
-  const { target } = event;
-  const colorSelected = document.querySelector('.selected').style.backgroundColor;
-  target.style.backgroundColor = colorSelected;
-}
-
-for (let index = 0; index < PIXEL_BOARD_DIV.children.length; index += 1) {
-  PIXEL_BOARD_DIV.children[index].addEventListener('click', paintPixel);
-}
-
-// Requisito 9
-
-const button = document.getElementById('clear-board');
-const nodeListPixel = document.querySelectorAll('.pixel');
-
-button.onclick = () => {
-  for (let index = 0; index < nodeListPixel.length; index += 1) {
-    const actualPixel = nodeListPixel[index];
-    actualPixel.style.backgroundColor = 'white';
-  }
+  pixelBoardArr.forEach((_, index) => {
+    pixelBoardArr[index].style.backgroundColor = 'white';
+  });
 };
 
-// Requisito 10
+VQV_BTN.addEventListener('click', (event) => {
+  event.preventDefault();
 
+  const { value } = BOARD_SIZE_INPUT;
+
+  if (!value) return alert('Board inválido!');
+  if (value <= 5) return createNewPixelBoard(5);
+  if (value >= 50) return createNewPixelBoard(50);
+
+  return createNewPixelBoard(value);
+});
+
+fillPixelBoard(5);
+randomizePalette();
